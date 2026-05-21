@@ -4,42 +4,42 @@ import aboutTeam from "@/assets/about-team.jpg";
 
 const tabs = [
   {
-    id: "kas-mes",
-    label: "Kas mes?",
-    num: "1",
-    heading: "Kas mes?",
+    id: "profilis",
+    label: "PROFILIS",
+    num: "1.",
+    heading: "PROFILIS",
     body: [
       "Mes esame jūsų telemarketingo, pardavimų vystymo ir verslo komunikacijų partneris. Dirbame su įmonėmis, kurioms svarbu ne tik pasiekti naujus klientus, bet ir išlaikyti esamus, geriau pažinti rinką ir užtikrinti sklandžius atsiskaitymus.",
       "Esame profesionali jūsų komandos pagalba ten, kur reikalingas tiesioginis dialogas, pasitikėjimas ir aiški komunikacija.",
     ],
   },
   {
-    id: "ka-siulome",
-    label: "Ką siūlome?",
-    num: "2",
-    heading: "Ką siūlome?",
+    id: "sprendimai",
+    label: "SPRENDIMAI",
+    num: "2.",
+    heading: "SPRENDIMAI",
     body: [
       "B2B telemarketingas, verslo susitikimų organizavimas, rinkos apklausos, mokėjimų kontrolė, klientų išlaikymo programos ir tikslūs duomenų sprendimai.",
       "Kiekvieną skambutį vertiname kaip galimybę sukurti realią vertę. Todėl dirbame nuosekliai ir su pagarba kiekvienam pašnekovui.",
     ],
   },
   {
-    id: "kaip-dirbame",
-    label: "Darbo eiga.",
-    num: "3",
-    heading: "Darbo eiga.",
+    id: "procesas",
+    label: "PROCESAS",
+    num: "3.",
+    heading: "PROCESAS",
     body: [
       "Pradedame nuo analizės, išsiaiškiname jūsų tikslus, parengiame komunikacijos planą ir tikslinę kontaktų bazę, tada pradedame vykdyti procesus pagal jūsų lūkesčius.",
       "Tikime, kad efektyvus pardavimų procesas turi derėti su žmogišku ryšiu ir empatija. Todėl nesiekiame greito efekto ir kuriame ilgalaikius santykius.",
     ],
   },
   {
-    id: "kodel-mes",
-    label: "PROFILIS",
-    num: "4",
-    heading: "PROFILIS",
+    id: "verte",
+    label: "VERTĖ",
+    num: "4.",
+    heading: "VERTĖ",
     body: [
-      "Mūsų tikslas yra tapti ilgalaikiu partneriu, padedančiu pasiekti jūsų verslo tikslus, nuo sklandžios kasdienės veiklos iki stipresnių pozicijų rinkoje. Dirbame taip, kad jūsų sėkmė būtų ir mūsų rezultatas.",
+      "Mūsų tikslas tapti strateginiu partneriu, užtikrinančiu jūsų verslo sklandumą kasdienėje veikloje ir stiprinančiu jūsų pozicijas rinkoje. Integruojamės į jūsų procesus taip, kad jūsų augimas ir sėkmė būtų tiesioginis mūsų darbo rezultatas.",
     ],
   },
 ];
