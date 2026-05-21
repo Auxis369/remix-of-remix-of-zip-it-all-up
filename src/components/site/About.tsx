@@ -68,24 +68,6 @@ export function About() {
           <div className="mt-8 h-px w-16 bg-accent/60 mx-auto" />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-14 md:mb-20 relative overflow-hidden"
-        >
-          <img
-            src={aboutTeam}
-            alt="Komanda dirba prie verslo komunikacijos plano"
-            width={1920}
-            height={1080}
-            loading="lazy"
-            className="w-full h-[260px] md:h-[380px] object-cover"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-        </motion.div>
 
         {/* Two-column grid: vertical tabs (left) + content card (right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
