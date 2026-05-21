@@ -9,15 +9,15 @@ import {
 const faqs = [
   {
     q: "Ar jūsų kainodara lanksti?",
-    a: "Taikome kelis modelius: fiksuotą mėnesinį mokestį, mokestį už pasiektą rezultatą (susitikimą, kvalifikuotą kontaktą) arba mišrų variantą. Konkrečią kainodarą suformuojame įvertinę jūsų tikslus bei apimtis.",
+    a: "Taip. Taikome kelis modelius: fiksuotą mėnesinį mokestį, mokestį už pasiektą rezultatą (pavyzdžiui, suderintą susitikimą) arba mišrų variantą. Galutinę kainodarą suformuojame įvertinę jūsų tikslus ir projekto apimtis.",
   },
   {
     q: "Kas vyksta, jei rezultatai netenkina?",
-    a: "Operatyviai keičiame komunikacijos planą arba tikslinę auditoriją pagal rinkos atsaką. Jei rodikliai išlieka nepatenkinami, stabdome projektą ir pasiūlome sąžiningą bendradarbiavimo užbaigimą.",
+    a: "Operatyviai keičiame komunikacijos planą arba tikslinę auditoriją. Jei rinkos atsakas išlieka nepatenkinamas, stabdome projektą ir pasiūlome sąžiningą bendradarbiavimo užbaigimą.",
   },
   {
     q: "Ar užtikrinsite mūsų duomenų konfidencialumą?",
-    a: "Prieš pradėdami darbus pasirašome konfidencialumo sutartį. Įsipareigojame saugoti jūsų kainodarą ir jautrius duomenis.",
+    a: "Taip. Prieš pradedant darbus pasirašome konfidencialumo sutartį. Griežtai saugome jūsų komercinę informaciją ir klientų duomenis.",
   },
   {
     q: "Ar dirbsite su mūsų konkurentais vienu metu?",
@@ -29,31 +29,27 @@ const faqs = [
   },
   {
     q: "Per kiek laiko paruošiamas ir paleidžiamas projektas?",
-    a: "Pasiruošimas trunka 2–5 dienas, kartais 1-2 savaites. Per šį laiką suformuojame duomenų bazę, parengiame komunikacijos planą ir suderiname procesus.",
+    a: "Priklausomai nuo apimties, nuo kelių dienų iki dviejų savaičių. Per šį laiką suformuojame duomenų bazę, parengiame komunikacijos planą ir suderiname procesus.",
   },
   {
     q: "Kas parengia pokalbių gaires?",
-    a: "Visą pokalbių struktūrą ir paslaugos pristatymą paruošiame mes, remdamiesi jūsų pateikta informacija. Tačiau esame lankstūs, jei jau turite veikiantį pokalbių modelį ar paruoštus tekstus, mielai dirbsime su jais.",
+    a: "Visą struktūrą paruošiame mes, remdamiesi jūsų informacija. Tačiau esame lankstūs ir jei turite jau veikiantį modelį ar tekstus, mielai dirbsime su jais.",
   },
   {
     q: "Ar galime koreguoti detales jau vykstančio projekto metu?",
-    a: "Taip, mūsų darbo procesas yra lankstus. Reaguodami į realų rinkos atsaką, galime operatyviai keisti duomenų atrankos kriterijus bei pokalbių gaires.",
+    a: "Taip. Nuolat stebime rinkos atsaką ir galime operatyviai keisti duomenų atrankos kriterijus bei pokalbių argumentus.",
   },
   {
     q: "Kaip dažnai teikiate atliktų darbų ataskaitas?",
-    a: "Detalias ataskaitas apie skambučius, rezultatus ir rinkos grįžtamąjį ryšį teikiame kas savaitę arba pagal suderintą grafiką.",
+    a: "Detalias ataskaitas apie skambučius, rezultatus ir rinkos grįžtamąjį ryšį teikiame kas savaitę arba pagal individualiai suderintą grafiką.",
   },
   {
     q: "Kokiu formatu pateikiate išgrynintus duomenis?",
-    a: "Duomenis pateikiame „Excel“ arba „Google Sheets“ lentelėse. Esant poreikiui, informaciją galime kelti tiesiai į jūsų CRM sistemą.",
+    a: "Duomenis pateikiame „Excel“ arba „Google Sheets“ lentelėse, taip pat galime juos vesti tiesiai į jūsų įmonės CRM sistemą.",
   },
   {
     q: "Ar dirbate su specializuotais verslo sektoriais?",
-    a: "Taip. Atliekame individualią jūsų srities analizę, kuri leidžia tiksliai identifikuoti sprendimų priėmėjus net ir itin specifinėse rinkose.",
-  },
-  {
-    q: "Su kokio dydžio įmonėmis dirbate?",
-    a: "Dirbame su įvairaus dydžio įmonėmis, nuo startuolių iki didelių organizacijų. Sprendimus pritaikome pagal kiekvieno kliento poreikius ir tikslus.",
+    a: "Taip. Atliekame individualią analizę, leidžiančią pasiekti sprendimų priėmėjus net ir itin specifinėse nišose. Sėkmingai pritaikome sprendimus tiek startuoliams, tiek didelėms organizacijoms.",
   },
 ];
 
