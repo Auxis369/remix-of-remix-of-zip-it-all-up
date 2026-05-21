@@ -28,6 +28,10 @@ const faqs = [
     a: "Taip. Kad pasiektume objektyvių rezultatų, taikome minimalią kontaktų apimtį arba vieno mėnesio bandomąjį laikotarpį.",
   },
   {
+    q: "Su kokio dydžio įmonėmis dirbate?",
+    a: "Dirbame su įvairaus dydžio įmonėmis, nuo startuolių iki didelių organizacijų. Sprendimus pritaikome individualiai pagal kiekvieno kliento poreikius ir tikslus.",
+  },
+  {
     q: "Per kiek laiko paruošiamas ir paleidžiamas projektas?",
     a: "Priklausomai nuo apimties, nuo kelių dienų iki dviejų savaičių. Per šį laiką suformuojame duomenų bazę, parengiame komunikacijos planą ir suderiname procesus.",
   },
