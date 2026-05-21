@@ -73,7 +73,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-14 md:mb-20 relative overflow-hidden border border-border/60"
+          className="mb-14 md:mb-20 relative overflow-hidden"
         >
           <img
             src={aboutTeam}
@@ -83,7 +83,8 @@ export function About() {
             loading="lazy"
             className="w-full h-[260px] md:h-[380px] object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
         </motion.div>
 
         {/* Two-column grid: vertical tabs (left) + content card (right) */}
