@@ -13,7 +13,7 @@ export function ServiceExplorer() {
   const active = openIdx !== null ? services[openIdx] : null;
 
   return (
-    <section id="paslaugos" className="relative py-20 md:py-24 border-t border-border">
+    <section id="paslaugos" className="relative py-20 md:py-24">
 
         <div className="relative w-full mb-16 md:mb-24 overflow-hidden">
           <div className="relative h-[320px] md:h-[440px] lg:h-[520px]">
