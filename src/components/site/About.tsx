@@ -35,9 +35,9 @@ const tabs = [
   },
   {
     id: "kodel-mes",
-    label: "Kodėl mes?",
+    label: "PROFILIS",
     num: "4",
-    heading: "Kodėl mes?",
+    heading: "PROFILIS",
     body: [
       "Mūsų tikslas yra tapti ilgalaikiu partneriu, padedančiu pasiekti jūsų verslo tikslus, nuo sklandžios kasdienės veiklos iki stipresnių pozicijų rinkoje. Dirbame taip, kad jūsų sėkmė būtų ir mūsų rezultatas.",
     ],
