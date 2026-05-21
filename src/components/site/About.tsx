@@ -49,7 +49,7 @@ export function About() {
   const activeTab = tabs[active];
 
   return (
-    <section id="apie" className="relative py-20 md:py-24 border-t border-border/60">
+    <section id="apie" className="relative py-20 md:py-24">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <motion.div
           initial={false}
