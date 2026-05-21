@@ -72,19 +72,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Korre — B2B telemarketingas ir pardavimų partneriai Lietuvoje" },
+      {
+        name: "description",
+        content:
+          "Korre — B2B telemarketingo, rinkos apklausų ir pardavimų vystymo agentūra. Šalti skambučiai, susitikimų organizavimas, mokėjimų kontrolė, klientų išlaikymas.",
+      },
+      { name: "author", content: "Korre" },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#0d0d0d" },
+      { property: "og:site_name", content: "Korre" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:locale", content: "lt_LT" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Korre",
+          description:
+            "B2B telemarketingo, rinkos apklausų ir pardavimų vystymo agentūra Lietuvoje.",
+          areaServed: "LT",
+        }),
       },
     ],
   }),
@@ -96,7 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="lt">
       <head>
         <HeadContent />
       </head>

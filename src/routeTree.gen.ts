@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TaisyklesRouteImport } from './routes/taisykles'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrivatumoPolitikaRouteImport } from './routes/privatumo-politika'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TaisyklesRoute = TaisyklesRouteImport.update({
+  id: '/taisykles',
+  path: '/taisykles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivatumoPolitikaRoute = PrivatumoPolitikaRouteImport.update({
+  id: '/privatumo-politika',
+  path: '/privatumo-politika',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/privatumo-politika': typeof PrivatumoPolitikaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/taisykles': typeof TaisyklesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/privatumo-politika': typeof PrivatumoPolitikaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/taisykles': typeof TaisyklesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/privatumo-politika': typeof PrivatumoPolitikaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/taisykles': typeof TaisyklesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/privatumo-politika' | '/sitemap.xml' | '/taisykles'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/privatumo-politika' | '/sitemap.xml' | '/taisykles'
+  id: '__root__' | '/' | '/privatumo-politika' | '/sitemap.xml' | '/taisykles'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrivatumoPolitikaRoute: typeof PrivatumoPolitikaRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TaisyklesRoute: typeof TaisyklesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/taisykles': {
+      id: '/taisykles'
+      path: '/taisykles'
+      fullPath: '/taisykles'
+      preLoaderRoute: typeof TaisyklesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privatumo-politika': {
+      id: '/privatumo-politika'
+      path: '/privatumo-politika'
+      fullPath: '/privatumo-politika'
+      preLoaderRoute: typeof PrivatumoPolitikaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrivatumoPolitikaRoute: PrivatumoPolitikaRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TaisyklesRoute: TaisyklesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
