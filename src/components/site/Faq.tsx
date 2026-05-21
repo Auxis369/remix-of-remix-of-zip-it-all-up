@@ -36,12 +36,12 @@ const faqs = [
     a: "Priklausomai nuo apimties, nuo kelių dienų iki dviejų savaičių. Per šį laiką suformuojame duomenų bazę, parengiame komunikacijos planą ir suderiname procesus.",
   },
   {
-    q: "Kas parengia pokalbių gaires?",
+    q: "Kas parengia komunikacijos planą?",
     a: "Visą struktūrą paruošiame mes, remdamiesi jūsų informacija. Tačiau esame lankstūs ir jei turite jau veikiantį modelį ar tekstus, mielai dirbsime su jais.",
   },
   {
     q: "Ar galime koreguoti detales jau vykstančio projekto metu?",
-    a: "Taip. Nuolat stebime rinkos atsaką ir galime operatyviai keisti duomenų atrankos kriterijus bei pokalbių argumentus.",
+    a: "Taip. Nuolat stebime rinkos atsaką ir galime operatyviai keisti duomenis.",
   },
   {
     q: "Kaip dažnai teikiate atliktų darbų ataskaitas?",
@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: "Ar dirbate su specializuotais verslo sektoriais?",
-    a: "Taip. Atliekame individualią analizę, leidžiančią pasiekti sprendimų priėmėjus net ir itin specifinėse nišose. Sėkmingai pritaikome sprendimus tiek startuoliams, tiek didelėms organizacijoms.",
+    a: "Taip. Atliekame individualią analizę, leidžiančią pasiekti sprendimų priėmėjus net ir itin specifinėse nišose.",
   },
 ];
 
