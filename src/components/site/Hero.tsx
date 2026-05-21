@@ -59,8 +59,9 @@ export function Hero() {
             </span>
           </a>
           <div className="flex items-center gap-4 self-start">
-            <Soundwave bars={28} className="w-32" amplitude={0.7} />
-            <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+            <Soundwave bars={28} className="w-32" amplitude={0.7} barClassName="bg-red-500" />
+            <span className="text-[10px] uppercase tracking-[0.25em] text-red-500 flex items-center gap-2">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
               Live · 8:00–17:00
             </span>
           </div>
