@@ -158,7 +158,7 @@ export function About() {
                       ))}
                     </div>
 
-                    <div className="mt-10 pt-8 border-t border-border/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div className="mt-10 pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <span className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
                         Pasiruošę pradėti?
                       </span>
