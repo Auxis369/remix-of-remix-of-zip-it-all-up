@@ -62,8 +62,7 @@ export function About() {
             · Apie mus
           </div>
           <h2 className="font-display text-[clamp(1.5rem,3.5vw,2.75rem)] leading-[1.02] tracking-[-0.02em] text-foreground text-balance">
-            Dirbame jums{" "}
-            <span className="italic text-accent">ir su jumis!</span>
+            Dirbame Jums ir su Jumis!
           </h2>
           <div className="mt-8 h-px w-16 bg-accent/60 mx-auto" />
         </motion.div>
