@@ -8,51 +8,51 @@ import {
 
 const faqs = [
   {
-    q: "Su kokio dydžio įmonėmis dirbate?",
+    q: "1. Su kokio dydžio įmonėmis dirbate?",
     a: "Dirbame su įvairaus dydžio įmonėmis nuo startuolių iki stambaus verslo. Sprendimus pritaikome individualiai pagal kiekvieno kliento poreikius ir tikslus.",
   },
   {
-    q: "Ar dirbate su specializuotais verslo sektoriais?",
+    q: "2. Ar dirbate su specializuotais verslo sektoriais?",
     a: "Taip. Atliekame individualią analizę, leidžiančią pasiekti sprendimų priėmėjus net ir itin specifinėse nišose.",
   },
   {
-    q: "Kiek trunka pasiruošimo etapas iki pirmųjų skambučių?",
+    q: "3. Kiek trunka pasiruošimo etapas iki pirmųjų skambučių?",
     a: "Priklausomai nuo apimties, nuo kelių dienų iki dviejų savaičių. Per šį laiką suformuojame duomenų bazę, parengiame komunikacijos planą ir suderiname procesus.",
   },
   {
-    q: "Kas parengia komunikacijos planą?",
+    q: "4. Kas parengia komunikacijos planą?",
     a: "Visą struktūrą paruošiame mes, remdamiesi jūsų informacija. Tačiau esame lankstūs ir jei turite jau veikiantį modelį ar tekstus, mielai dirbsime su jais.",
   },
   {
-    q: "Ar galime koreguoti strategiją jau vykstančios kampanijos metu?",
+    q: "5. Ar galime koreguoti strategiją jau vykstančios kampanijos metu?",
     a: "Taip. Nuolat stebime rinkos atsaką ir galime operatyviai keisti duomenis.",
   },
   {
-    q: "Ar užtikrinsite mūsų duomenų konfidencialumą?",
+    q: "6. Ar užtikrinsite mūsų duomenų konfidencialumą?",
     a: "Taip. Prieš pradedant darbus pasirašome konfidencialumo sutartį. Griežtai saugome jūsų komercinę informaciją ir klientų duomenis.",
   },
   {
-    q: "Ar dirbsite su mūsų konkurentais vienu metu?",
+    q: "7. Ar dirbsite su mūsų konkurentais vienu metu?",
     a: "Ne. Viename rinkos segmente vienu metu dirbame tik su viena įmone.",
   },
   {
-    q: "Kaip dažnai teikiate atliktų darbų ataskaitas?",
+    q: "8. Kaip dažnai teikiate atliktų darbų ataskaitas?",
     a: "Detalias ataskaitas apie skambučius, rezultatus ir rinkos grįžtamąjį ryšį teikiame kas savaitę arba pagal individualiai suderintą grafiką.",
   },
   {
-    q: "Kokiu formatu pateikiate išgrynintus duomenis?",
+    q: "9. Kokiu formatu pateikiate išgrynintus duomenis?",
     a: "Duomenis pateikiame „Excel“ arba „Google Sheets“ lentelėse, taip pat galime juos vesti tiesiai į jūsų įmonės CRM sistemą.",
   },
   {
-    q: "Kaip elgiamasi, jei kampanijos rezultatai neatitinka keltų tikslų?",
+    q: "10. Kaip elgiamasi, jei kampanijos rezultatai neatitinka keltų tikslų?",
     a: "Operatyviai keičiame komunikacijos planą arba tikslinę auditoriją. Jei rinkos atsakas išlieka nepatenkinamas, stabdome projektą ir pasiūlome sąžiningą bendradarbiavimo užbaigimą.",
   },
   {
-    q: "Ar taikomas minimalus užsakymo dydis arba terminas?",
+    q: "11. Ar taikomas minimalus užsakymo dydis arba terminas?",
     a: "Taip. Kad pasiektume objektyvių rezultatų, taikome minimalią kontaktų apimtį arba vieno mėnesio bandomąjį laikotarpį.",
   },
   {
-    q: "Kokios yra mūsų paslaugų kainos?",
+    q: "12. Kaip apskaičiuojama paslaugų kaina?",
     a: "Mūsų kainodara yra lanksti ir pritaikoma pagal jūsų verslo poreikius bei tikslinę auditoriją. Galutinė kaina priklauso nuo projekto apimties, trukmės ir norimų rezultatų. Siūlome nemokamą konsultaciją, kurios metu įvertiname situaciją ir pateikiame individualų pasiūlymą.",
   },
 ];
