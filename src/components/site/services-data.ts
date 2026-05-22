@@ -89,9 +89,9 @@ export const services: Service[] = [
     short: "Išlaikymas & win-back",
     painPoints: ["Mažėja esamų klientų aktyvumas"],
     description:
-      "Esamų klientų išlaikymas dažnai kainuoja mažiau nei naujų paieška, tačiau šiam darbui nuolat trūksta laiko ir dėmesio. Mes prisiimame šią atsakomybę: stipriname ryšius su aktyviais partneriais ir sistemingai dirbame su tais, kurie jau kurį laiką nebendradarbiauja.",
+      "Esamų klientų išlaikymas dažnai reikalauja mažiau investicijų nei naujų pritraukimas, tačiau tam neretai pritrūksta laiko ir nuoseklumo. Mes prisiimame šią atsakomybę, stipriname ryšius su aktyviais klientais ir sistemingai atkuriame ryšį su tais, kurie kurį laiką nebuvo aktyvūs.",
     bullets: [
-      { strong: "Lojalumo stiprinimas:", rest: "reguliariai susisiekiame su jūsų aktyviais klientais ir užtikriname, kad jų poreikiai būtų visiškai atliepti, o bendradarbiavimas vyktų sklandžiai." },
+      { strong: "Lojalumo stiprinimas:", rest: "reguliariai susisiekiame su jūsų aktyviais klientais ir užtikriname, kad jų poreikiai būtų tinkamai suprasti bei pilnai įgyvendinti, o bendradarbiavimas vyktų sklandžiai." },
       { strong: "Papildomų pardavimų didinimas:", rest: "profesionaliai pristatome naujas paslaugas ar produktus esamiems partneriams, didindami jų pirkimų vertę ir jūsų pajamas." },
       { strong: "Klientų susigrąžinimo kampanijos:", rest: "vykdome tikslinius skambučius buvusiems klientams, išsiaiškiname pasitraukimo priežastis ir siūlome sprendimus, galinčius atkurti partnerystę." },
       { strong: "Grįžtamojo ryšio valdymas:", rest: "išklausome klientų pastabas bei lūkesčius ir paverčiame juos konkrečiomis įžvalgomis jūsų paslaugų kokybei gerinti." },
@@ -105,13 +105,13 @@ export const services: Service[] = [
     short: "Skolų administravimas",
     painPoints: ["Vėluoja klientų mokėjimai"],
     description:
-      "Vėluojantys mokėjimai kenkia ne tik pinigų srautui, bet ir verslo santykiams. Mūsų tikslas yra užtikrinti, kad visi atsiskaitymai vyktų laiku, o bet kokios situacijos būtų sprendžiamos profesionaliai ir taktiškai, išsaugant partnerystę.",
+      "Vėluojantys mokėjimai gali turėti įtakos verslo santykių stabilumui. Mūsų tikslas yra užtikrinti, kad visi atsiskaitymai vyktų laiku, o bet kokios situacijos būtų sprendžiamos profesionaliai ir taktiškai, išsaugant partnerystę.",
     bullets: [
-      { strong: "Mokėjimų priminimas:", rest: "remdamiesi jūsų pateiktais duomenimis, laiku susisiekiame su klientais telefonu arba žinute ir informuojame juos apie artėjančius ar vėluojančius atsiskaitymus." },
-      { strong: "Profesionali prevencija:", rest: "palaikome dalykišką dialogą su pirkėjais, išsiaiškiname vėlavimo priežastis ir suderinami aiškūs mokėjimo terminai ar grafikai." },
-      { strong: "Verslo santykių išsaugojimas:", rest: "visa komunikacija vykdoma laikantis aukščiausių verslo etikos standartų, kad finansiniai klausimai netaptų kliūtimi tolimesniam bendradarbiavimui." },
-      { strong: "Pranešimų siuntimas:", rest: "papildomai naudojame el. paštą ir SMS žinutes, kad informacija apie finansinius įsipareigojimus pasiektų klientą jam priimtiniausiu būdu." },
-      { strong: "Skaidrus procesų valdymas:", rest: "visi atlikti veiksmai ir pirkėjų ketinimai fiksuojami ataskaitose, todėl jūs visada matote tikslią procesų eigą." },
+      { strong: "Mokėjimų priminimai:", rest: "laiku susisiekiame su klientais telefonu ar žinute ir informuojame apie artėjančius arba vėluojančius atsiskaitymus." },
+      { strong: "Situacijų sprendimas:", rest: "išsiaiškiname vėlavimo priežastis ir suderiname aiškius mokėjimo terminus ar grafiką." },
+      { strong: "Verslo santykių išlaikymas:", rest: "bendraujame profesionaliai ir etiškai, kad finansiniai klausimai netrukdytų tolimesniam bendradarbiavimui." },
+      { strong: "Informacijos perdavimas:", rest: "naudojame el. paštą ir SMS, kad svarbi informacija klientą pasiektų jam patogiu būdu." },
+      { strong: "Procesų skaidrumas:", rest: "fiksuojame visus veiksmus ir pateikiame aiškias ataskaitas apie situacijų eigą." },
     ],
     value:
       "Mokėjimai laiku ir išlaikyti verslo santykiai.",
