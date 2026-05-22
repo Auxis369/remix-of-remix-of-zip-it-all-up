@@ -80,8 +80,8 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <About />
         <ServiceExplorer />
+        <About />
         <Faq />
         <ContactSection />
       </main>
