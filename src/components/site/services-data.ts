@@ -75,11 +75,10 @@ export const services: Service[] = [
     description:
       "Tikslūs strateginiai sprendimai prasideda nuo tikslių duomenų. Atliekame reprezentatyvias verslo ir gyventojų apklausas telefonu bei paverčiame surinktą informaciją aiškiomis įžvalgomis, kuriomis galite remtis kasdienėje veikloje.",
     bullets: [
-      { strong: "Klientų pasitenkinimo tyrimai (NPS):", rest: "išsiaiškiname, kaip klientai vertina jūsų paslaugas ar produktus, ir nustatome sritis, kurias tobulindami dar labiau atliepsite jų lūkesčius." },
-      { strong: "Rinkos poreikių ir tendencijų analizė:", rest: "tiriame konkurencinę aplinką ir rinkos tendencijas, kad turėtumėte pagrindą pagrįstiems sprendimams ir ilgalaikiam konkurenciniam pranašumui." },
-      { strong: "Produkto ar paslaugos tobulinimas:", rest: "surenkame klientų nuomones ir pageidavimus, kurie padeda suprasti, kokių pokyčių labiausiai reikia." },
-      { strong: "Slaptojo pirkėjo vertinimai ir įvaizdžio tyrimai:", rest: "objektyviai įvertiname aptarnavimo kokybę ir jūsų prekės ženklo suvokimą rinkoje." },
-      { strong: "Ataskaitos ir rekomendacijos:", rest: "ne tik surenkame nuomones, bet ir pateikiame jas kaip struktūruotas, aiškias ataskaitas su konkrečiais veiksmų pasiūlymais." },
+      { strong: "Rinkos analizė ir tendencijų vertinimas:", rest: "analizuojame konkurencinę aplinką bei rinkos pokyčius, kad galėtumėte priimti pagrįstus verslo sprendimus ir stiprinti savo konkurencinį pranašumą." },
+      { strong: "Produkto ir paslaugų tobulinimas:", rest: "renkame klientų nuomones bei įžvalgas, padedančias geriau suprasti jų poreikius ir nustatyti svarbiausias tobulinimo kryptis." },
+      { strong: "Klientų pasitenkinimo tyrimai:", rest: "išsiaiškiname, kaip klientai vertina jūsų paslaugas ar produktus, nustatome sritis, kurias tobulindami dar labiau atliepsite jų lūkesčius." },
+      { strong: "Slaptojo pirkėjo tyrimai:", rest: "objektyviai įvertiname klientų aptarnavimo kokybę, komunikaciją ir pardavimo procesą, kad matytumėte realią situaciją iš kliento perspektyvos." },
     ],
     value:
       "Priimate sprendimus remdamiesi faktais, o ne prielaidomis.",
