@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Su kokio dydžio įmonėmis dirbate?",
-    a: "Dirbame su įvairaus dydžio įmonėmis, nuo startuolių iki didelių organizacijų. Sprendimus pritaikome individualiai pagal kiekvieno kliento poreikius ir tikslus.",
+    a: "Dirbame su įvairaus dydžio įmonėmis nuo startuolių iki stambaus verslo. Sprendimus pritaikome individualiai pagal kiekvieno kliento poreikius ir tikslus.",
   },
   {
     q: "Kiek trunka pasiruošimo etapas iki pirmųjų skambučių?",
