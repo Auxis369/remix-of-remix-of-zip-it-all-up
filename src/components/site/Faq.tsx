@@ -8,8 +8,8 @@ import {
 
 const faqs = [
   {
-    q: "Ar jūsų kainodara lanksti?",
-    a: "Taip. Taikome kelis modelius: fiksuotą mėnesinį mokestį, mokestį už pasiektą rezultatą (pavyzdžiui, suderintą susitikimą) arba mišrų variantą. Galutinę kainodarą suformuojame įvertinę jūsų tikslus ir projekto apimtis.",
+    q: "Kokios yra šių paslaugų kainos?",
+    a: "Mūsų kainodara yra lanksti ir pritaikoma pagal jūsų verslo poreikius bei tikslinę auditoriją. Galutinė kaina priklauso nuo projekto apimties, trukmės ir norimų rezultatų. Siūlome nemokamą konsultaciją, kurios metu įvertiname situaciją ir pateikiame individualų pasiūlymą.",
   },
   {
     q: "Kas vyksta, jei rezultatai netenkina?",
@@ -32,7 +32,7 @@ const faqs = [
     a: "Dirbame su įvairaus dydžio įmonėmis, nuo startuolių iki didelių organizacijų. Sprendimus pritaikome individualiai pagal kiekvieno kliento poreikius ir tikslus.",
   },
   {
-    q: "Per kiek laiko paruošiamas ir paleidžiamas projektas?",
+    q: "Kiek trunka pasiruošimo etapas iki pirmųjų skambučių?",
     a: "Priklausomai nuo apimties, nuo kelių dienų iki dviejų savaičių. Per šį laiką suformuojame duomenų bazę, parengiame komunikacijos planą ir suderiname procesus.",
   },
   {
