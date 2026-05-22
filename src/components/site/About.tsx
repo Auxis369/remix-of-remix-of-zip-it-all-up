@@ -18,7 +18,7 @@ const tabs = [
     num: "2.",
     heading: "SPRENDIMAI",
     body: [
-      "Teikiame B2B telemarketingo, verslo susitikimų organizavimo, rinkos tyrimų, klientų išlaikymo ir mokėjimų kontrolės paslaugas. Kiekvieną kontaktą vertiname kaip galimybę kurti ilgalaikį ir vertingą verslo ryšį.",
+      "Teikiame B2B pardavimų, telemarketingo, verslo susitikimų organizavimo, rinkos tyrimų, klientų išlaikymo ir mokėjimų kontrolės paslaugas. Kiekvieną kontaktą vertiname kaip galimybę kurti ilgalaikį ir vertingą verslo ryšį.",
     ],
   },
   {
