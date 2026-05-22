@@ -9,8 +9,7 @@ const tabs = [
     num: "1.",
     heading: "PROFILIS",
     body: [
-      "Mes esame jūsų telemarketingo, pardavimų vystymo ir verslo komunikacijų partneris. Dirbame su įmonėmis, kurioms svarbu ne tik pasiekti naujus klientus, bet ir išlaikyti esamus, geriau pažinti rinką ir užtikrinti sklandžius atsiskaitymus.",
-      "Esame profesionali jūsų komandos pagalba ten, kur reikalingas tiesioginis dialogas, pasitikėjimas ir aiški komunikacija.",
+      "Mes esame jūsų telemarketingo, pardavimų vystymo ir verslo komunikacijos partneris. Dirbame su įmonėmis, kurioms svarbu ne tik pasiekti naujus klientus, bet ir išlaikyti esamus, geriau pažinti rinką bei užtikrinti sklandžius atsiskaitymus. Esame profesionali jūsų komandos pagalba ten, kur reikalingas tiesioginis dialogas, pasitikėjimas ir aiški komunikacija.",
     ],
   },
   {
@@ -19,8 +18,7 @@ const tabs = [
     num: "2.",
     heading: "SPRENDIMAI",
     body: [
-      "B2B telemarketingas, verslo susitikimų organizavimas, rinkos apklausos, mokėjimų kontrolė, klientų išlaikymo programos ir tikslūs duomenų sprendimai.",
-      "Kiekvieną skambutį vertiname kaip galimybę sukurti realią vertę. Todėl dirbame nuosekliai ir su pagarba kiekvienam pašnekovui.",
+      "B2B telemarketingas, verslo susitikimų organizavimas, rinkos apklausos, mokėjimų kontrolė, klientų išlaikymo programos ir tikslūs duomenų sprendimai. Kiekvieną skambutį vertiname kaip galimybę sukurti realią vertę. Todėl dirbame nuosekliai ir su pagarba kiekvienam pašnekovui.",
     ],
   },
   {
@@ -29,8 +27,7 @@ const tabs = [
     num: "3.",
     heading: "PROCESAS",
     body: [
-      "Pradedame nuo analizės, išsiaiškiname jūsų tikslus, parengiame komunikacijos planą ir tikslinę kontaktų bazę, tada pradedame vykdyti procesus pagal jūsų lūkesčius.",
-      "Tikime, kad efektyvus pardavimų procesas turi derėti su žmogišku ryšiu ir empatija. Todėl nesiekiame greito efekto ir kuriame ilgalaikius santykius.",
+      "Pradedame nuo analizės, išsiaiškiname jūsų tikslus, parengiame komunikacijos planą bei tikslinę kontaktų bazę ir vykdome procesus pagal išsikeltus uždavinius. Tikime, kad efektyvus pardavimų procesas turi derėti su žmogišku ryšiu ir empatija. Todėl orientuojamės ne į trumpalaikį efektą, o į ilgalaikių santykių kūrimą.",
     ],
   },
   {
@@ -39,7 +36,7 @@ const tabs = [
     num: "4.",
     heading: "VERTĖ",
     body: [
-      "Mūsų tikslas tapti strateginiu partneriu, užtikrinančiu jūsų verslo sklandumą kasdienėje veikloje ir stiprinančiu jūsų pozicijas rinkoje. Integruojamės į jūsų procesus taip, kad jūsų augimas ir sėkmė būtų tiesioginis mūsų darbo rezultatas.",
+      "Siekiame tapti strateginiu partneriu, užtikrinančiu jūsų verslo sklandumą kasdienėje veikloje ir stiprinančiu jūsų pozicijas rinkoje. Integruojamės į jūsų procesus taip, kad jūsų augimas ir sėkmė būtų tiesioginis mūsų darbo rezultatas.",
     ],
   },
 ];
