@@ -8,28 +8,12 @@ import {
 
 const faqs = [
   {
-    q: "Kokios yra šių paslaugų kainos?",
-    a: "Mūsų kainodara yra lanksti ir pritaikoma pagal jūsų verslo poreikius bei tikslinę auditoriją. Galutinė kaina priklauso nuo projekto apimties, trukmės ir norimų rezultatų. Siūlome nemokamą konsultaciją, kurios metu įvertiname situaciją ir pateikiame individualų pasiūlymą.",
-  },
-  {
-    q: "Kas vyksta, jei rezultatai netenkina?",
-    a: "Operatyviai keičiame komunikacijos planą arba tikslinę auditoriją. Jei rinkos atsakas išlieka nepatenkinamas, stabdome projektą ir pasiūlome sąžiningą bendradarbiavimo užbaigimą.",
-  },
-  {
-    q: "Ar užtikrinsite mūsų duomenų konfidencialumą?",
-    a: "Taip. Prieš pradedant darbus pasirašome konfidencialumo sutartį. Griežtai saugome jūsų komercinę informaciją ir klientų duomenis.",
-  },
-  {
-    q: "Ar dirbsite su mūsų konkurentais vienu metu?",
-    a: "Ne. Viename rinkos segmente vienu metu dirbame tik su viena įmone.",
-  },
-  {
-    q: "Ar taikomas minimalus užsakymo dydis arba terminas?",
-    a: "Taip. Kad pasiektume objektyvių rezultatų, taikome minimalią kontaktų apimtį arba vieno mėnesio bandomąjį laikotarpį.",
-  },
-  {
     q: "Su kokio dydžio įmonėmis dirbate?",
     a: "Dirbame su įvairaus dydžio įmonėmis nuo startuolių iki stambaus verslo. Sprendimus pritaikome individualiai pagal kiekvieno kliento poreikius ir tikslus.",
+  },
+  {
+    q: "Ar dirbate su specializuotais verslo sektoriais?",
+    a: "Taip. Atliekame individualią analizę, leidžiančią pasiekti sprendimų priėmėjus net ir itin specifinėse nišose.",
   },
   {
     q: "Kiek trunka pasiruošimo etapas iki pirmųjų skambučių?",
@@ -40,8 +24,16 @@ const faqs = [
     a: "Visą struktūrą paruošiame mes, remdamiesi jūsų informacija. Tačiau esame lankstūs ir jei turite jau veikiantį modelį ar tekstus, mielai dirbsime su jais.",
   },
   {
-    q: "Ar galime koreguoti detales jau vykstančio projekto metu?",
+    q: "Ar galime koreguoti strategiją jau vykstančios kampanijos metu?",
     a: "Taip. Nuolat stebime rinkos atsaką ir galime operatyviai keisti duomenis.",
+  },
+  {
+    q: "Ar užtikrinsite mūsų duomenų konfidencialumą?",
+    a: "Taip. Prieš pradedant darbus pasirašome konfidencialumo sutartį. Griežtai saugome jūsų komercinę informaciją ir klientų duomenis.",
+  },
+  {
+    q: "Ar dirbsite su mūsų konkurentais vienu metu?",
+    a: "Ne. Viename rinkos segmente vienu metu dirbame tik su viena įmone.",
   },
   {
     q: "Kaip dažnai teikiate atliktų darbų ataskaitas?",
@@ -52,8 +44,16 @@ const faqs = [
     a: "Duomenis pateikiame „Excel“ arba „Google Sheets“ lentelėse, taip pat galime juos vesti tiesiai į jūsų įmonės CRM sistemą.",
   },
   {
-    q: "Ar dirbate su specializuotais verslo sektoriais?",
-    a: "Taip. Atliekame individualią analizę, leidžiančią pasiekti sprendimų priėmėjus net ir itin specifinėse nišose.",
+    q: "Kaip elgiamasi, jei kampanijos rezultatai neatitinka keltų tikslų?",
+    a: "Operatyviai keičiame komunikacijos planą arba tikslinę auditoriją. Jei rinkos atsakas išlieka nepatenkinamas, stabdome projektą ir pasiūlome sąžiningą bendradarbiavimo užbaigimą.",
+  },
+  {
+    q: "Ar taikomas minimalus užsakymo dydis arba terminas?",
+    a: "Taip. Kad pasiektume objektyvių rezultatų, taikome minimalią kontaktų apimtį arba vieno mėnesio bandomąjį laikotarpį.",
+  },
+  {
+    q: "Kokios yra mūsų paslaugų kainos?",
+    a: "Mūsų kainodara yra lanksti ir pritaikoma pagal jūsų verslo poreikius bei tikslinę auditoriją. Galutinė kaina priklauso nuo projekto apimties, trukmės ir norimų rezultatų. Siūlome nemokamą konsultaciją, kurios metu įvertiname situaciją ir pateikiame individualų pasiūlymą.",
   },
 ];
 
