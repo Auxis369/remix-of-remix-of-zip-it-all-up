@@ -32,7 +32,7 @@ const faqs = [
     a: "Dirbame su įvairaus dydžio įmonėmis, nuo startuolių iki didelių organizacijų. Sprendimus pritaikome individualiai pagal kiekvieno kliento poreikius ir tikslus.",
   },
   {
-    q: "Per kiek laiko paruošiamas ir paleidžiamas projektas?",
+    q: "Kiek trunka pasiruošimo etapas iki pirmųjų skambučių?",
     a: "Priklausomai nuo apimties, nuo kelių dienų iki dviejų savaičių. Per šį laiką suformuojame duomenų bazę, parengiame komunikacijos planą ir suderiname procesus.",
   },
   {
