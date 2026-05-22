@@ -9,8 +9,7 @@ const tabs = [
     num: "1.",
     heading: "PROFILIS",
     body: [
-      "Mes esame jūsų telemarketingo, pardavimų vystymo ir verslo komunikacijų partneris. Dirbame su įmonėmis, kurioms svarbu ne tik pasiekti naujus klientus, bet ir išlaikyti esamus, geriau pažinti rinką ir užtikrinti sklandžius atsiskaitymus.",
-      "Esame profesionali jūsų komandos pagalba ten, kur reikalingas tiesioginis dialogas, pasitikėjimas ir aiški komunikacija.",
+      "Mes esame jūsų telemarketingo, pardavimų vystymo ir verslo komunikacijos partneris. Dirbame su įmonėmis, kurioms svarbu ne tik pasiekti naujus klientus, bet ir išlaikyti esamus, geriau pažinti rinką bei užtikrinti sklandžius atsiskaitymus. Esame profesionali jūsų komandos pagalba ten, kur reikalingas tiesioginis dialogas, pasitikėjimas ir aiški komunikacija.",
     ],
   },
   {
