@@ -32,7 +32,7 @@ export const services: Service[] = [
       { strong: "Duomenų valymas:", rest: "pašaliname nebeaktualius, pasikartojančius ar klaidingus įrašus, kad jūsų komanda nešvaistytų laiko netinkamiems kontaktams." },
     ],
     value:
-      "Jūsų pardavimų komanda dirba tik su tiksliais, paruoštais duomenimis.",
+      "Jūsų gaunate tikslius ir paruoštus duomenis.",
   },
   {
     num: "2",
@@ -40,7 +40,7 @@ export const services: Service[] = [
     short: "Telemarketingas",
     painPoints: ["Trūksta šaltų skambučių srauto"],
     description:
-      "Profesionaliai atlikti šaltieji skambučiai yra vienas greičiausių būdų pasiekti naujus klientus ir išsiaiškinti jų poreikius tiesiogiai. Mūsų tikslas yra ne tiesiog paskambinti, o uždegti tikrą susidomėjimą ir perduoti jums kontaktus, paruoštus tolimesniam pokalbiui.",
+      "Profesionaliai atlikti šaltieji skambučiai yra vienas greičiausių būdų pasiekti naujus klientus ir išsiaiškinti jų poreikius tiesiogiai. Mūsų tikslas yra ne tiesiog paskambinti, o suformuoti tikslinį susidomėjimą ir perduoti jums kontaktus, paruoštus tolimesniam pokalbiui.",
     bullets: [
       { strong: "Pasiruošimas ir strategija:", rest: "atliekame išsamią jūsų produkto ar paslaugos analizę ir parengiame komunikacijos planą, pritaikytą konkrečiai tikslinei grupei." },
       { strong: "Tikslinė paieška:", rest: "nuolat atnaujiname kontaktų sąrašus pagal jūsų nurodytas kategorijas, kad skambučiai pasiektų būtent tuos žmones, kuriems jūsų pasiūlymas labiausiai tinka." },
@@ -60,12 +60,12 @@ export const services: Service[] = [
       "Patekti pas aukščiausio lygio vadovą yra vienas iš sudėtingiausių pardavimų proceso etapų. Mes šį darbą atliekame už jus: surandame tinkamus sprendimų priėmėjus, užmezgame profesionalų ryšį ir suplanuojame susitikimus, į kuriuos jūsų komanda ateina jau žinodama kliento poreikius.",
     bullets: [
       { strong: "Sprendimų priėmėjų nustatymas:", rest: "tikslingai ieškome ir identifikuojame asmenis, kurie tiesiogiai atsakingi už sprendimų priėmimą jūsų srityje." },
-      { strong: "Profesionalus atstovavimas:", rest: "atstovaujame jūsų įmonę laikydamiesi aukščiausių etikos standartų ir sudomename potencialius partnerius jūsų siūloma verte." },
-      { strong: "Susitikimų planavimas:", rest: "suderinamas abiem pusėms patogus laikas gyvam arba nuotoliniam pristatymui, kad jūsų vadybininkų darbotvarkė būtų užpildyta kokybiškais kontaktais." },
-      { strong: "Informacijos perdavimas:", rest: "susitikimo metu surinktą informaciją apie kliento poreikius perduodame jūsų komandai, kad ji galėtų visiškai susikoncentruoti į derybas." },
+      { strong: "Profesionalus atstovavimas:", rest: "atstovaujame jūsų įmonei laikydamiesi aukščiausių etikos standartų ir sudominame potencialius partnerius jūsų siūloma verte." },
+      { strong: "Susitikimų planavimas:", rest: "suderiname patogų susitikimų laiką, kad jūs dirbtumėte tik su kokybiškais ir jau paruoštais kontaktais." },
+      { strong: "Informacijos perdavimas:", rest: "pateikiame visą surinktą informaciją apie klientą ir jo poreikius jūsų komandai." },
     ],
     value:
-      "Jūsų komanda ateina į derybas pasiruošusi, o ne pradeda nuo nulio.",
+      "Į susitikimą ateinate pasiruošę, o tai leidžia derybų laiką išnaudoti maksimaliai efektyviai.",
   },
   {
     num: "4",

@@ -18,7 +18,7 @@ const tabs = [
     num: "2.",
     heading: "SPRENDIMAI",
     body: [
-      "B2B telemarketingas, verslo susitikimų organizavimas, rinkos apklausos, mokėjimų kontrolė, klientų išlaikymo programos ir tikslūs duomenų sprendimai. Kiekvieną skambutį vertiname kaip galimybę sukurti realią vertę. Todėl dirbame nuosekliai ir su pagarba kiekvienam pašnekovui.",
+      "B2B pardavimai, telemarketingas, verslo susitikimų organizavimas, rinkos apklausos, mokėjimų kontrolė, klientų išlaikymo programos ir tikslūs duomenų sprendimai. Kiekvieną skambutį vertiname kaip galimybę sukurti realią vertę. Todėl dirbame nuosekliai ir su pagarba kiekvienam pašnekovui.",
     ],
   },
   {
