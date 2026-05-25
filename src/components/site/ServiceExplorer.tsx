@@ -47,45 +47,98 @@ export function ServiceExplorer() {
         </div>
 
         <div className="mx-auto max-w-[1400px] px-6 md:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {services.map((s, i) => (
-              <motion.button
-                key={s.num}
-                type="button"
-                onClick={() => setOpenIdx(i)}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-                initial={false}
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative text-left bg-[#0f0f0f]/95 backdrop-blur-md border border-border/70 hover:border-accent/60 shadow-[0_1px_0_color-mix(in_oklab,white_6%,transparent)_inset,0_18px_40px_-28px_rgba(0,0,0,0.9)] hover:shadow-[0_1px_0_color-mix(in_oklab,white_10%,transparent)_inset,0_28px_60px_-24px_color-mix(in_oklab,var(--accent)_45%,black)] transition-all duration-500 p-7 md:p-8 flex flex-col gap-8 min-h-[220px] overflow-hidden"
-              >
-                <span className="absolute top-0 left-0 h-px w-0 group-hover:w-full bg-accent transition-all duration-700" />
-
-                <div className="flex items-start justify-between">
-                  <span className="text-[11px] tabular-nums tracking-[0.3em] text-muted-foreground group-hover:text-accent transition-colors">
-                    {s.num}
-                  </span>
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70 group-hover:text-foreground/80 transition-colors">
-                    {s.short}
-                  </span>
-                </div>
-
-                <h3 className="mt-auto font-display font-semibold text-[18px] md:text-[19px] leading-snug tracking-[-0.01em] text-foreground group-hover:text-accent transition-colors duration-500 text-balance">
-                  {s.title}
-                </h3>
-
-                <div className="flex items-center justify-between pt-5 border-t border-border/60 group-hover:border-accent/40 transition-colors">
-                  <span className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground/80 group-hover:text-foreground transition-colors">
-                    Sužinoti daugiau
-                  </span>
-                  <span className="text-xl text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-500">
-                    →
-                  </span>
-                </div>
-              </motion.button>
-            ))}
+          <div className="flex items-center gap-6 mb-10 md:mb-14">
+            <span className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground tabular-nums">
+              Indeksas — 0{services.length} įrašai
+            </span>
+            <span className="h-px flex-1 bg-border" />
+            <span className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground hidden md:inline">
+              Spustelėkite eilutę →
+            </span>
           </div>
+
+          <ul className="relative border-t border-border">
+            {services.map((s, i) => {
+              const isHover = hovered === i;
+              const offset = i % 2 === 0 ? "md:pr-12" : "md:pl-16";
+              return (
+                <li key={s.num} className="border-b border-border">
+                  <motion.button
+                    type="button"
+                    onClick={() => setOpenIdx(i)}
+                    onMouseEnter={() => setHovered(i)}
+                    onMouseLeave={() => setHovered(null)}
+                    className={`group relative w-full text-left overflow-hidden ${offset}`}
+                  >
+                    <motion.span
+                      aria-hidden
+                      initial={false}
+                      animate={{ scaleX: isHover ? 1 : 0 }}
+                      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                      style={{ transformOrigin: "left" }}
+                      className="absolute inset-0 bg-gradient-to-r from-accent/15 via-accent/5 to-transparent pointer-events-none"
+                    />
+                    <motion.span
+                      aria-hidden
+                      initial={false}
+                      animate={{ scaleY: isHover ? 1 : 0 }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      style={{ transformOrigin: "top" }}
+                      className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent"
+                    />
+
+                    <div className="relative flex items-baseline gap-6 md:gap-12 py-8 md:py-10 px-4 md:px-8">
+                      <motion.span
+                        animate={{ x: isHover ? 8 : 0 }}
+                        transition={{ duration: 0.5 }}
+                        className={`font-display tabular-nums text-[clamp(2.5rem,5vw,4.5rem)] leading-none tracking-[-0.04em] shrink-0 w-[2.5ch] transition-colors duration-500 ${isHover ? "text-accent" : "text-muted-foreground/40"}`}
+                      >
+                        0{s.num}
+                      </motion.span>
+
+                      <div className="flex-1 min-w-0">
+                        <p className={`text-[10px] uppercase tracking-[0.3em] mb-2 md:mb-3 transition-colors duration-500 ${isHover ? "text-accent" : "text-muted-foreground/70"}`}>
+                          — {s.short}
+                        </p>
+                        <motion.h3
+                          animate={{ x: isHover ? 6 : 0 }}
+                          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                          className="font-display text-[clamp(1.125rem,2.2vw,1.875rem)] leading-[1.05] tracking-[-0.02em] text-foreground text-balance"
+                        >
+                          {s.title}
+                        </motion.h3>
+                      </div>
+
+                      <div className="hidden lg:block w-[26%] shrink-0 overflow-hidden">
+                        <AnimatePresence mode="wait">
+                          {isHover && (
+                            <motion.p
+                              key="blurb"
+                              initial={{ opacity: 0, x: 20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: 20 }}
+                              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                              className="text-[12.5px] leading-relaxed text-foreground/70 line-clamp-3"
+                            >
+                              {s.description}
+                            </motion.p>
+                          )}
+                        </AnimatePresence>
+                      </div>
+
+                      <motion.span
+                        animate={{ x: isHover ? 6 : 0, rotate: isHover ? -45 : 0 }}
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className={`shrink-0 text-2xl md:text-3xl transition-colors duration-500 ${isHover ? "text-accent" : "text-muted-foreground/60"}`}
+                      >
+                        →
+                      </motion.span>
+                    </div>
+                  </motion.button>
+                </li>
+              );
+            })}
+          </ul>
         </div>
 
         {/* Slide-out drawer */}
