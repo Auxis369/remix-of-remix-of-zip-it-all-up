@@ -147,7 +147,7 @@ export function About() {
           </div>
 
           {/* Right: content card */}
-          <div className="lg:col-span-8 relative">
+          <div className="hidden lg:block lg:col-span-8 relative">
             {tabs.map((t, i) => {
               const isActive = i === active;
               return (
