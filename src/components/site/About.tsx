@@ -1,323 +1,298 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 const tabs = [
   {
     id: "profilis",
     label: "Profilis",
-    num: "01",
-    heading: "PROFILIS",
-    kicker: "Kas mes",
+    code: "LINE 01",
+    status: "WHO",
+    heading: "Profilis",
     body: [
       "Mes esame jūsų telemarketingo, pardavimų vystymo ir verslo komunikacijos partneris. Dirbame su įmonėmis, kurioms svarbu ne tik pasiekti naujus klientus, bet ir išlaikyti esamus, geriau pažinti rinką bei užtikrinti sklandžius atsiskaitymus. Esame profesionali jūsų komandos pagalba ten, kur reikalingas tiesioginis dialogas, pasitikėjimas ir aiški komunikacija.",
+    ],
+    metrics: [
+      { k: "Dialogas", v: "1 : 1" },
+      { k: "Sektoriai", v: "B2B" },
+      { k: "Patirtis", v: "10+ m." },
     ],
   },
   {
     id: "sprendimai",
     label: "Sprendimai",
-    num: "02",
-    heading: "SPRENDIMAI",
-    kicker: "Ką darome",
+    code: "LINE 02",
+    status: "WHAT",
+    heading: "Sprendimai",
     body: [
       "Teikiame B2B pardavimų, telemarketingo, verslo susitikimų organizavimo, rinkos tyrimų, klientų išlaikymo ir mokėjimų kontrolės paslaugas. Kiekvieną kontaktą vertiname kaip galimybę kurti ilgalaikį ir vertingą verslo ryšį.",
+    ],
+    metrics: [
+      { k: "Paslaugų", v: "06" },
+      { k: "Apimtis", v: "Pilna" },
+      { k: "Kontaktai", v: "∞" },
     ],
   },
   {
     id: "procesas",
     label: "Procesas",
-    num: "03",
-    kicker: "Kaip dirbame",
-    heading: "PROCESAS",
+    code: "LINE 03",
+    status: "HOW",
+    heading: "Procesas",
     body: [
       "Pradedame nuo jūsų tikslų, auditorijos ir situacijos analizės. Parengiame komunikacijos planą, suformuojame tikslinę kontaktų bazę ir vykdome procesus pagal aiškią strategiją. Dirbame nuosekliai, orientuodamiesi į sklandžią komunikaciją ir ilgalaikį rezultatą.",
+    ],
+    metrics: [
+      { k: "Etapai", v: "06" },
+      { k: "Startas", v: "1–2 sav." },
+      { k: "Ataskaitos", v: "Sav." },
     ],
   },
   {
     id: "verte",
     label: "Vertė",
-    num: "04",
-    kicker: "Ką gaunate",
-    heading: "VERTĖ",
+    code: "LINE 04",
+    status: "WHY",
+    heading: "Vertė",
     body: [
       "Dirbame kaip jūsų komandos dalis. Padedame užtikrinti sklandžius procesus, stiprinti santykius su klientais ir kurti stabilų verslo augimą. Mūsų tikslas yra ilgalaikė vertė ir patikimas bendradarbiavimas.",
+    ],
+    metrics: [
+      { k: "Modelis", v: "Partnerystė" },
+      { k: "Fokusas", v: "Ilgalaikis" },
+      { k: "Konkurentai", v: "0 sektoriuje" },
     ],
   },
 ];
 
-// Unique SVG visual per tab — animated line art
-function TabVisual({ id }: { id: string }) {
-  const common = {
-    initial: { pathLength: 0, opacity: 0 },
-    animate: { pathLength: 1, opacity: 1 },
-    transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] as const },
-  };
+// Live "waveform" — animated bars that breathe
+function Waveform({ active, bars = 48 }: { active: boolean; bars?: number }) {
   return (
-    <svg viewBox="0 0 400 400" className="w-full h-full" fill="none">
-      <defs>
-        <linearGradient id="g-accent" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="currentColor" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="currentColor" stopOpacity="0.15" />
-        </linearGradient>
-      </defs>
-
-      {id === "profilis" && (
-        <g className="text-accent">
-          {[0, 1, 2, 3, 4].map((i) => (
-            <motion.circle
-              key={i}
-              cx="200"
-              cy="200"
-              r={40 + i * 30}
-              stroke="url(#g-accent)"
-              strokeWidth="1"
-              {...common}
-              transition={{ duration: 1.2, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-            />
-          ))}
-          <motion.circle
-            cx="200" cy="200" r="6"
-            fill="currentColor"
-            initial={{ scale: 0 }} animate={{ scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
+    <div className="flex items-center gap-[3px] h-16">
+      {Array.from({ length: bars }).map((_, i) => {
+        // pseudo-random heights that vary by position
+        const base = 18 + Math.sin(i * 0.55) * 14 + Math.cos(i * 0.21) * 10;
+        return (
+          <motion.span
+            key={i}
+            className="w-[3px] rounded-full bg-accent"
+            style={{ height: `${Math.max(6, base)}%` }}
+            animate={
+              active
+                ? {
+                    scaleY: [0.4, 1.4, 0.7, 1.1, 0.5],
+                    opacity: [0.5, 1, 0.7, 1, 0.5],
+                  }
+                : { scaleY: 0.3, opacity: 0.25 }
+            }
+            transition={
+              active
+                ? {
+                    duration: 1.4 + (i % 5) * 0.15,
+                    repeat: Infinity,
+                    delay: i * 0.04,
+                    ease: "easeInOut",
+                  }
+                : { duration: 0.4 }
+            }
           />
-        </g>
-      )}
-
-      {id === "sprendimai" && (
-        <g className="text-accent" stroke="currentColor" strokeWidth="1">
-          {Array.from({ length: 8 }).map((_, i) =>
-            Array.from({ length: 8 }).map((_, j) => (
-              <motion.rect
-                key={`${i}-${j}`}
-                x={40 + i * 40}
-                y={40 + j * 40}
-                width="32"
-                height="32"
-                fill={(i + j) % 3 === 0 ? "currentColor" : "transparent"}
-                fillOpacity={(i + j) % 3 === 0 ? 0.15 : 0}
-                initial={{ opacity: 0, scale: 0.6 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: (i + j) * 0.03, duration: 0.5 }}
-              />
-            ))
-          )}
-        </g>
-      )}
-
-      {id === "procesas" && (
-        <g className="text-accent" stroke="currentColor" strokeWidth="1.2" fill="none">
-          <motion.path
-            d="M 30 320 C 100 320, 130 80, 200 200 S 320 320, 370 80"
-            {...common}
-          />
-          {[
-            { x: 30, y: 320 },
-            { x: 130, y: 180 },
-            { x: 200, y: 200 },
-            { x: 290, y: 240 },
-            { x: 370, y: 80 },
-          ].map((p, i) => (
-            <motion.circle
-              key={i}
-              cx={p.x} cy={p.y} r="5"
-              fill="currentColor"
-              initial={{ scale: 0 }} animate={{ scale: 1 }}
-              transition={{ delay: 0.4 + i * 0.12, duration: 0.4 }}
-            />
-          ))}
-        </g>
-      )}
-
-      {id === "verte" && (
-        <g className="text-accent">
-          {[
-            { x: 60, h: 80 },
-            { x: 130, h: 140 },
-            { x: 200, h: 200 },
-            { x: 270, h: 260 },
-            { x: 340, h: 320 },
-          ].map((b, i) => (
-            <motion.rect
-              key={i}
-              x={b.x - 22}
-              width="44"
-              fill="currentColor"
-              fillOpacity={0.15 + i * 0.15}
-              stroke="currentColor"
-              strokeWidth="1"
-              initial={{ y: 360, height: 0 }}
-              animate={{ y: 360 - b.h, height: b.h }}
-              transition={{ delay: i * 0.1, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            />
-          ))}
-          <motion.line
-            x1="20" y1="360" x2="380" y2="360"
-            stroke="currentColor" strokeWidth="1"
-            {...common}
-          />
-        </g>
-      )}
-    </svg>
+        );
+      })}
+    </div>
   );
+}
+
+// Pulse rings around the active "line"
+function ConnectionPulse() {
+  return (
+    <div className="relative w-3 h-3">
+      <span className="absolute inset-0 rounded-full bg-accent" />
+      {[0, 1, 2].map((i) => (
+        <motion.span
+          key={i}
+          className="absolute inset-0 rounded-full border border-accent"
+          animate={{ scale: [1, 2.8], opacity: [0.6, 0] }}
+          transition={{
+            duration: 1.8,
+            repeat: Infinity,
+            delay: i * 0.6,
+            ease: "easeOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function useTicker() {
+  const [t, setT] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setT(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return t;
 }
 
 export function About() {
   const [active, setActive] = useState(0);
   const activeTab = tabs[active];
+  const now = useTicker();
+  const clock = now.toLocaleTimeString("lt-LT", { hour12: false });
 
   return (
-    <section id="apie" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Decorative grid */}
+    <section
+      id="apie"
+      className="relative py-24 md:py-32 overflow-hidden bg-[#0a0a0a] text-[color:oklch(0.95_0.005_60)]"
+    >
+      {/* Background grid + scanlines */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+          backgroundSize: "60px 60px",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, currentColor 0px, currentColor 1px, transparent 1px, transparent 3px)",
         }}
       />
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
-        {/* Editorial header */}
-        <div className="grid grid-cols-12 gap-6 mb-16 md:mb-24 items-end">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 md:col-span-7"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-10 bg-accent" />
-              <span className="text-[10px] uppercase tracking-[0.4em] text-accent">
-                Apie mus · §
-              </span>
-            </div>
-            <h2 className="font-display text-[clamp(2rem,6vw,5rem)] leading-[0.92] tracking-[-0.03em] text-foreground">
-              Dirbame{" "}
-              <span className="italic font-light text-accent">Jums</span>
-              <br />
-              ir su <span className="italic font-light">Jumis.</span>
-            </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="col-span-12 md:col-span-5 md:pl-8 md:border-l border-border/60"
-          >
-            <p className="text-[13px] uppercase tracking-[0.25em] text-muted-foreground mb-3">
-              · Keturi skyriai
-            </p>
-            <p className="text-[15px] leading-relaxed text-foreground/70">
-              Skaitykite kaip žurnalą — kiekvienas skyrius atveria, kaip
-              dirbame, ką siūlome ir kokią vertę kuriame.
-            </p>
-          </motion.div>
+        {/* Switchboard top bar */}
+        <div className="flex items-center justify-between border border-border/40 bg-[#111]/60 backdrop-blur-sm px-4 md:px-6 py-3 mb-10 md:mb-14 font-mono">
+          <div className="flex items-center gap-3 md:gap-5">
+            <ConnectionPulse />
+            <span className="text-[10px] md:text-[11px] tracking-[0.3em] text-accent uppercase">
+              LIVE · SWITCHBOARD
+            </span>
+            <span className="hidden md:inline text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
+              · apie mus
+            </span>
+          </div>
+          <div className="flex items-center gap-4 md:gap-6 text-[10px] md:text-[11px] tracking-[0.25em] text-muted-foreground uppercase tabular-nums">
+            <span className="hidden sm:inline">VLN</span>
+            <span className="text-foreground/80">{clock}</span>
+            <span>0{active + 1}/0{tabs.length}</span>
+          </div>
         </div>
 
-        {/* Main editorial layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-6">
-          {/* LEFT — Vertical chapter index */}
-          <div
-            role="tablist"
-            aria-label="Apie mus"
-            className="lg:col-span-5 flex flex-col"
-          >
+        {/* Editorial heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-12 md:mb-16 max-w-3xl"
+        >
+          <h2 className="font-display text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-[-0.03em]">
+            Skambiname.{" "}
+            <span className="italic font-light text-accent">Klausomės.</span>{" "}
+            Susitariame.
+          </h2>
+          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-foreground/65">
+            Keturios linijos — keturi atsakymai. Pasirinkite liniją ir
+            išklausykite, kaip dirbame.
+          </p>
+        </motion.div>
+
+        {/* Switchboard panel */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-border/40 bg-[#0d0d0d]/60 backdrop-blur-sm">
+          {/* LEFT: lines list */}
+          <div className="lg:col-span-5 lg:border-r border-border/40">
             {tabs.map((t, i) => {
               const isActive = i === active;
               return (
-                <div key={t.id} className="border-t border-border/60 last:border-b">
+                <div
+                  key={t.id}
+                  className="border-b border-border/40 last:border-b-0"
+                >
                   <button
-                    role="tab"
                     type="button"
-                    aria-selected={isActive}
-                    aria-controls={`panel-${t.id}`}
-                    id={`tab-${t.id}`}
                     onClick={() => setActive(isActive ? -1 : i)}
                     onMouseEnter={() => {
-                      // desktop preview switch on hover
                       if (window.matchMedia("(min-width: 1024px)").matches) {
                         setActive(i);
                       }
                     }}
-                    className="group relative w-full text-left py-7 md:py-8 cursor-pointer block"
+                    aria-selected={isActive}
+                    className="group relative w-full text-left p-5 md:p-6 cursor-pointer block"
                   >
-                    {/* Sliding accent bar */}
+                    {/* hover wash */}
                     <motion.span
                       aria-hidden
-                      className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent origin-top"
-                      initial={false}
-                      animate={{ scaleY: isActive ? 1 : 0 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    />
-                    {/* Hover wash */}
-                    <motion.span
-                      aria-hidden
-                      className="absolute inset-0 bg-secondary/40 origin-left"
+                      className="absolute inset-0 bg-accent/[0.05] origin-left"
                       initial={false}
                       animate={{ scaleX: isActive ? 1 : 0 }}
-                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     />
 
-                    <div className="relative flex items-baseline gap-6 md:gap-10 pl-6 pr-4">
-                      <motion.span
-                        className="font-display tabular-nums text-[clamp(2.5rem,5vw,4rem)] leading-none"
-                        animate={{
-                          color: isActive
-                            ? "hsl(var(--accent, 0 0% 50%))"
-                            : "hsl(var(--muted-foreground))",
-                          x: isActive ? 4 : 0,
-                        }}
-                        style={{
-                          color: isActive ? undefined : undefined,
-                        }}
-                      >
-                        <span className={isActive ? "text-accent" : "text-muted-foreground/40"}>
-                          {t.num}
-                        </span>
-                      </motion.span>
-
-                      <div className="flex-1 min-w-0">
-                        <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">
-                          {t.kicker}
-                        </div>
-                        <motion.div
-                          className="font-display text-[clamp(1.25rem,2.4vw,1.875rem)] leading-tight tracking-[-0.01em]"
+                    <div className="relative flex items-center gap-4 md:gap-6">
+                      {/* indicator dot */}
+                      <div className="w-3 h-3 shrink-0 relative">
+                        <motion.span
+                          className="absolute inset-0 rounded-full"
                           animate={{
-                            x: isActive ? 6 : 0,
+                            backgroundColor: isActive
+                              ? "oklch(0.78 0.16 65)"
+                              : "oklch(0.4 0 0)",
                           }}
-                          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        >
-                          <span
-                            className={
-                              isActive
-                                ? "text-foreground"
-                                : "text-foreground/60 group-hover:text-foreground"
-                            }
-                          >
-                            {t.label}
-                          </span>
-                        </motion.div>
+                          transition={{ duration: 0.3 }}
+                        />
+                        {isActive && (
+                          <motion.span
+                            className="absolute inset-0 rounded-full border border-accent"
+                            animate={{ scale: [1, 2.6], opacity: [0.6, 0] }}
+                            transition={{
+                              duration: 1.6,
+                              repeat: Infinity,
+                              ease: "easeOut",
+                            }}
+                          />
+                        )}
                       </div>
 
-                      <motion.span
-                        aria-hidden
-                        className="text-2xl text-accent shrink-0"
-                        animate={{
-                          rotate: isActive ? 90 : 0,
-                          opacity: isActive ? 1 : 0.3,
-                        }}
-                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      {/* code */}
+                      <span className="font-mono text-[10px] md:text-[11px] tracking-[0.25em] text-muted-foreground tabular-nums shrink-0">
+                        {t.code}
+                      </span>
+
+                      {/* label */}
+                      <div className="flex-1 min-w-0">
+                        <div
+                          className={`font-display text-[clamp(1.125rem,2vw,1.5rem)] leading-tight transition-colors ${
+                            isActive
+                              ? "text-foreground"
+                              : "text-foreground/55 group-hover:text-foreground/80"
+                          }`}
+                        >
+                          {t.label}
+                        </div>
+                      </div>
+
+                      {/* status chip */}
+                      <span
+                        className={`font-mono text-[10px] tracking-[0.2em] px-2 py-1 border transition-colors ${
+                          isActive
+                            ? "border-accent/60 text-accent"
+                            : "border-border/60 text-muted-foreground"
+                        }`}
                       >
-                        →
-                      </motion.span>
+                        {t.status}
+                      </span>
+                    </div>
+
+                    {/* mini waveform under each line */}
+                    <div className="relative mt-4 pl-9 md:pl-11">
+                      <Waveform active={isActive} bars={36} />
                     </div>
                   </button>
 
-                  {/* Mobile inline panel */}
+                  {/* mobile inline panel */}
                   <AnimatePresence initial={false}>
                     {isActive && (
                       <motion.div
@@ -326,23 +301,37 @@ export function About() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        className="lg:hidden overflow-hidden"
+                        className="lg:hidden overflow-hidden border-t border-border/40 bg-[#0a0a0a]"
                       >
-                        <div className="px-6 pb-8 pt-2">
-                          <div className="aspect-square max-w-[260px] mx-auto mb-6 text-accent">
-                            <TabVisual id={t.id} />
-                          </div>
-                          <div className="space-y-4 text-[15px] leading-relaxed text-foreground/85">
-                            {t.body.map((p, j) => (
-                              <p key={j}>{p}</p>
+                        <div className="p-6 space-y-5">
+                          <div className="flex gap-3 flex-wrap">
+                            {t.metrics.map((m) => (
+                              <div
+                                key={m.k}
+                                className="border border-border/50 px-3 py-2"
+                              >
+                                <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
+                                  {m.k}
+                                </div>
+                                <div className="font-display text-[14px] text-foreground">
+                                  {m.v}
+                                </div>
+                              </div>
                             ))}
                           </div>
+                          {t.body.map((p, j) => (
+                            <p
+                              key={j}
+                              className="text-[15px] leading-relaxed text-foreground/80"
+                            >
+                              {p}
+                            </p>
+                          ))}
                           <a
                             href="#kontaktai"
-                            className="mt-6 inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-3 text-[11px] uppercase tracking-[0.25em] hover:bg-accent transition-colors duration-500"
+                            className="inline-flex items-center gap-3 bg-accent text-background px-6 py-3 text-[11px] uppercase tracking-[0.25em] font-mono hover:bg-foreground transition-colors duration-500"
                           >
-                            Susisiekti
-                            <span>→</span>
+                            → Skambinti
                           </a>
                         </div>
                       </motion.div>
@@ -353,107 +342,114 @@ export function About() {
             })}
           </div>
 
-          {/* RIGHT — Animated visual + body (desktop) */}
-          <div className="hidden lg:block lg:col-span-7 lg:pl-10 lg:border-l border-border/60">
-            <div className="sticky top-24">
-              <AnimatePresence mode="wait">
-                {activeTab && (
-                  <motion.div
-                    key={activeTab.id}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    {/* Animated section number */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center gap-3">
-                        <span className="h-px w-8 bg-accent" />
-                        <span className="text-[10px] uppercase tracking-[0.3em] text-accent">
-                          §{activeTab.num} — {activeTab.kicker}
-                        </span>
-                      </div>
-                      <span className="font-display tabular-nums text-[11px] text-muted-foreground">
-                        0{active + 1} / 0{tabs.length}
+          {/* RIGHT: live call display (desktop) */}
+          <div className="hidden lg:block lg:col-span-7 relative">
+            <AnimatePresence mode="wait">
+              {activeTab && (
+                <motion.div
+                  key={activeTab.id}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.35 }}
+                  className="p-8 md:p-10 h-full flex flex-col"
+                >
+                  {/* call header */}
+                  <div className="flex items-center justify-between mb-8 pb-5 border-b border-border/40 font-mono">
+                    <div className="flex items-center gap-3">
+                      <ConnectionPulse />
+                      <span className="text-[10px] tracking-[0.3em] uppercase text-accent">
+                        ON AIR
+                      </span>
+                      <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+                        · {activeTab.code} · {activeTab.status}
                       </span>
                     </div>
+                    <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground tabular-nums">
+                      DUR {String(active * 12 + 47).padStart(3, "0")}s
+                    </span>
+                  </div>
 
-                    {/* Big animated visual */}
-                    <motion.div
-                      initial={{ scale: 0.92, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                      className="relative aspect-square max-w-[420px] mb-10"
-                    >
-                      <TabVisual id={activeTab.id} />
-                      {/* Floating tag */}
+                  {/* large live waveform */}
+                  <div className="mb-8">
+                    <Waveform active bars={64} />
+                  </div>
+
+                  {/* metrics */}
+                  <div className="grid grid-cols-3 gap-3 mb-8">
+                    {activeTab.metrics.map((m, i) => (
                       <motion.div
-                        initial={{ opacity: 0, y: 8 }}
+                        key={m.k}
+                        initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3, duration: 0.5 }}
-                        className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm border border-border/60 px-3 py-1.5"
+                        transition={{ delay: 0.1 + i * 0.08, duration: 0.5 }}
+                        className="border border-border/40 p-4 bg-[#0a0a0a]/40"
                       >
-                        <span className="text-[9px] uppercase tracking-[0.28em] text-muted-foreground tabular-nums">
-                          fig. {activeTab.num}
-                        </span>
+                        <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+                          {m.k}
+                        </div>
+                        <div className="font-display text-[clamp(1rem,1.5vw,1.4rem)] text-foreground">
+                          {m.v}
+                        </div>
                       </motion.div>
-                    </motion.div>
+                    ))}
+                  </div>
 
-                    {/* Heading with stagger letters */}
-                    <motion.h3
-                      key={`${activeTab.id}-h`}
-                      className="font-display text-[clamp(1.75rem,3.2vw,2.75rem)] leading-[1] tracking-[-0.02em] mb-6 text-foreground flex flex-wrap"
-                    >
-                      {activeTab.heading.split("").map((ch, i) => (
-                        <motion.span
-                          key={i}
-                          initial={{ opacity: 0, y: 18 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{
-                            delay: 0.1 + i * 0.04,
-                            duration: 0.5,
-                            ease: [0.22, 1, 0.36, 1],
-                          }}
-                        >
-                          {ch}
-                        </motion.span>
-                      ))}
-                    </motion.h3>
+                  {/* transcript heading */}
+                  <div className="flex items-center gap-3 mb-4 font-mono">
+                    <span className="text-[10px] tracking-[0.3em] uppercase text-accent">
+                      ▸ TRANSCRIPT
+                    </span>
+                    <span className="h-px flex-1 bg-border/40" />
+                  </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4, duration: 0.6 }}
-                      className="space-y-5 text-[16px] md:text-[17px] leading-relaxed text-foreground/80 max-w-[560px]"
-                    >
-                      {activeTab.body.map((p, j) => (
-                        <p key={j}>{p}</p>
-                      ))}
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.6, duration: 0.5 }}
-                      className="mt-10 pt-8 border-t border-border/60 flex items-center justify-between gap-4"
-                    >
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                        Pasiruošę pradėti?
-                      </span>
-                      <a
-                        href="#kontaktai"
-                        className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-[12px] uppercase tracking-[0.25em] hover:bg-accent transition-colors duration-500"
+                  {/* body — letter stagger */}
+                  <motion.h3
+                    key={`${activeTab.id}-h`}
+                    className="font-display text-[clamp(1.5rem,2.8vw,2.25rem)] leading-tight tracking-[-0.02em] mb-5 text-foreground flex flex-wrap"
+                  >
+                    {activeTab.heading.split("").map((ch, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{ opacity: 0, y: 14 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          delay: 0.1 + i * 0.04,
+                          duration: 0.5,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
                       >
-                        Susisiekti
-                        <span className="inline-block transition-transform group-hover:translate-x-1">
-                          →
-                        </span>
-                      </a>
-                    </motion.div>
+                        {ch === " " ? "\u00A0" : ch}
+                      </motion.span>
+                    ))}
+                  </motion.h3>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35, duration: 0.6 }}
+                    className="space-y-4 text-[16px] leading-relaxed text-foreground/80 max-w-[580px] mb-10"
+                  >
+                    {activeTab.body.map((p, j) => (
+                      <p key={j}>{p}</p>
+                    ))}
                   </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+
+                  {/* call-to-action */}
+                  <div className="mt-auto pt-6 border-t border-border/40 flex items-center justify-between gap-4">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                      · Norite išgirsti daugiau?
+                    </span>
+                    <a
+                      href="#kontaktai"
+                      className="group inline-flex items-center gap-3 bg-accent text-background px-7 py-4 text-[12px] uppercase tracking-[0.25em] font-mono hover:bg-foreground transition-colors duration-500"
+                    >
+                      → Skambinti mums
+                    </a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>
