@@ -65,12 +65,9 @@ function KineticHeading({
   accentIndex: number;
 }) {
   return (
-    <h3 className="font-display text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-[-0.03em] text-foreground flex flex-wrap gap-x-4 gap-y-1">
+    <h3 className="font-display text-[clamp(1.75rem,4vw,3.25rem)] leading-[1] tracking-[-0.02em] text-foreground">
       {words.map((w, i) => (
-        <motion.span
-          key={`${w}-${i}`}
-          className="inline-block overflow-hidden"
-        >
+        <span key={`${w}-${i}`} className="inline-block overflow-hidden align-bottom mr-[0.28em]">
           <motion.span
             className={`inline-block ${
               i === accentIndex ? "italic font-light text-accent" : ""
@@ -85,9 +82,10 @@ function KineticHeading({
           >
             {w}
           </motion.span>
-        </motion.span>
+        </span>
       ))}
     </h3>
+
   );
 }
 
@@ -264,38 +262,14 @@ export function About() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="space-y-10"
+                className="space-y-6"
               >
-                {/* huge number */}
-                <div className="flex items-end gap-6">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="font-display tabular-nums text-[clamp(5rem,14vw,11rem)] leading-[0.85] tracking-[-0.05em] text-accent/90"
-                  >
-                    {activeTab.num}
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                    className="pb-4 md:pb-6"
-                  >
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-1">
-                      / Skyrius
-                    </div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/70">
-                      {activeTab.kicker}
-                    </div>
-                  </motion.div>
-                </div>
-
                 {/* kinetic heading */}
                 <KineticHeading
                   words={activeTab.heading}
                   accentIndex={activeTab.accent}
                 />
+
 
                 {/* divider */}
                 <motion.div
