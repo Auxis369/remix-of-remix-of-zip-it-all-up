@@ -76,33 +76,72 @@ export function About() {
             {tabs.map((t, i) => {
               const isActive = i === active;
               return (
-                <button
-                  key={t.id}
-                  role="tab"
-                  type="button"
-                  aria-selected={isActive}
-                  aria-controls={`panel-${t.id}`}
-                  id={`tab-${t.id}`}
-                  onClick={() => setActive(i)}
-                  className={`group relative w-full text-left px-5 py-4 border-l-2 transition-all duration-300 cursor-pointer ${
-                    isActive
-                      ? "border-accent bg-secondary/60 text-foreground"
-                      : "border-border/60 text-muted-foreground hover:text-foreground hover:border-accent/50 hover:bg-secondary/30"
-                  }`}
-                >
-                  <div className="flex items-baseline gap-3">
-                    <span
-                      className={`font-display italic text-[14px] transition-colors ${
-                        isActive ? "text-accent" : "text-muted-foreground/60"
-                      }`}
-                    >
-                      {t.num}
-                    </span>
-                    <span className="text-[13px] md:text-[14px] tracking-[0.06em] font-medium leading-snug">
-                      {t.label}
-                    </span>
-                  </div>
-                </button>
+                <div key={t.id}>
+                  <button
+                    role="tab"
+                    type="button"
+                    aria-selected={isActive}
+                    aria-controls={`panel-${t.id}`}
+                    id={`tab-${t.id}`}
+                    onClick={() => setActive(isActive ? -1 : i)}
+                    className={`group relative w-full text-left px-5 py-4 border-l-2 transition-all duration-300 cursor-pointer ${
+                      isActive
+                        ? "border-accent bg-secondary/60 text-foreground"
+                        : "border-border/60 text-muted-foreground hover:text-foreground hover:border-accent/50 hover:bg-secondary/30"
+                    }`}
+                  >
+                    <div className="flex items-baseline gap-3">
+                      <span
+                        className={`font-display italic text-[14px] transition-colors ${
+                          isActive ? "text-accent" : "text-muted-foreground/60"
+                        }`}
+                      >
+                        {t.num}
+                      </span>
+                      <span className="text-[13px] md:text-[14px] tracking-[0.06em] font-medium leading-snug">
+                        {t.label}
+                      </span>
+                    </div>
+                  </button>
+
+                  {/* Mobile inline accordion panel */}
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.div
+                        key="m-panel"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                        className="lg:hidden overflow-hidden"
+                      >
+                        <div className="relative bg-card border border-border/60 shadow-sm p-6 mt-2 mb-2">
+                          <div className="absolute -top-px left-0 h-px w-12 bg-accent" />
+                          <h3 className="font-display text-[1.25rem] leading-[1.1] tracking-[-0.02em] text-foreground mb-4 text-balance">
+                            {t.heading}
+                          </h3>
+                          <div className="space-y-4 text-[15px] leading-relaxed text-foreground/85">
+                            {t.body.map((p, j) => (
+                              <p key={j}>{p}</p>
+                            ))}
+                          </div>
+                          <div className="mt-6 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <span className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
+                              Pasiruošę pradėti?
+                            </span>
+                            <a
+                              href="#kontaktai"
+                              className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-3 text-[11px] uppercase tracking-[0.25em] hover:bg-accent transition-colors duration-500 self-start sm:self-auto"
+                            >
+                              Susisiekti
+                              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </a>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               );
             })}
           </div>
