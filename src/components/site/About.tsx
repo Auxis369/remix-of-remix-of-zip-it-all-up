@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import aboutTeam from "@/assets/about-team.jpg";
 
 const tabs = [
