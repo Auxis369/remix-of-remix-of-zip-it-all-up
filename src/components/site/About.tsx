@@ -65,12 +65,9 @@ function KineticHeading({
   accentIndex: number;
 }) {
   return (
-    <h3 className="font-display text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-[-0.03em] text-foreground flex flex-wrap gap-x-4 gap-y-1">
+    <h3 className="font-display text-[clamp(1.75rem,4vw,3.25rem)] leading-[1] tracking-[-0.02em] text-foreground">
       {words.map((w, i) => (
-        <motion.span
-          key={`${w}-${i}`}
-          className="inline-block overflow-hidden"
-        >
+        <span key={`${w}-${i}`} className="inline-block overflow-hidden align-bottom mr-[0.28em]">
           <motion.span
             className={`inline-block ${
               i === accentIndex ? "italic font-light text-accent" : ""
@@ -85,9 +82,10 @@ function KineticHeading({
           >
             {w}
           </motion.span>
-        </motion.span>
+        </span>
       ))}
     </h3>
+
   );
 }
 
